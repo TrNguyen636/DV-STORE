@@ -1,0 +1,873 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* header setting */
+.main-header {
+    background-color: white;
+    color: #2d3436;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 100;
+}
+
+/* ===== HEADER-TOP ===== */
+.header-top {
+    background-color: #20bf6b;
+    padding: 15px 0;
+    /* border-bottom: 1px solid #f1f2f6; */
+}
+
+.header-top .container {
+    justify-content: space-between;
+}
+
+.logo h2 {
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+
+/* navbar, mega navbar */
+
+/* 2. Style the Link that triggers the dropdown */
+.main-nav ul li {
+    position: static;
+    /* Allows the mega menu to be full width of screen */
+}
+
+.main-nav ul li a i {
+    font-size: 12px;
+    margin-left: 5px;
+    transition: transform 0.3s;
+}
+
+/* Rotate arrow when hovering */
+.main-nav ul li:hover>a i {
+    transform: rotate(180deg);
+}
+
+/* 3. The Hidden Dropdown Box */
+.mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid #f1f2f6;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    /* Start slightly down */
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+/* Show Menu on Hover */
+.has-dropdown:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* 4. Layout: Sidebar + Grid */
+.mega-content {
+    display: flex;
+    padding: 30px 0;
+    min-height: 350px;
+}
+
+/* --- Left Sidebar --- */
+.mega-sidebar {
+    width: 250px;
+    border-right: 1px solid #eee;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.mega-menu .mega-sidebar a {
+    padding: 10px 15px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #2d3436;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    border-bottom: none;
+    text-transform: capitalize;
+}
+
+.mega-sidebar a i {
+    font-size: 12px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+/* Sidebar Hover Effect */
+.mega-sidebar a:hover,
+.mega-sidebar a.active {
+    background-color: #f1f2f6;
+    color: #20bf6b;
+
+}
+
+.mega-sidebar a:hover i,
+.mega-sidebar a.active i {
+    opacity: 1;
+    transform: rotate(0deg) ;
+    /* Reset rotation */
+}
+
+.mega-grid-container {
+    flex: 1;
+    padding-left: 40px;
+    position: relative;
+    /* Keep grids contained */
+}
+
+/* --- Right Grid --- */
+.mega-grid {
+    display: none;
+    /* Hide all grids initially */
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    align-content: start;
+    /* Animation for smooth switching */
+    animation: fadeIn 0.2s ease;
+}
+
+.mega-item {
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.mega-item:hover {
+    transform: translateY(-5px);
+}
+
+.mega-item img {
+    width: 100%;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.mega-item h4 {
+    font-size: 13px;
+    font-weight: 600;
+    color: #2d3436;
+    line-height: 1.4;
+}
+
+.mega-item:hover h4 {
+    color: #20bf6b;
+}
+
+.mega-grid.active {
+    display: grid;
+    /* Show only the one with 'active' class */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Sidebar Active State (Highlight the selected text) */
+.mega-sidebar a.active {
+    background-color: #f1f2f6;
+    color: #20bf6b !important;
+}
+
+.mega-sidebar a.active i {
+    opacity: 1;
+}
+
+/* Search section */
+/* --- SEARCH BOX --- */
+.search-box {
+    display: flex;
+    align-items: center;
+    background: #f1f2f6;
+    border-radius: 50px;
+    padding: 5px 20px;
+    width: 45%;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+/* Kỹ thuật: :focus-within 
+   Nghĩa là: Khi bấm vào bất cứ cái gì bên trong (input), thì cái vỏ (search-box) sẽ đổi màu
+*/
+.search-box:focus-within {
+    background: #ffffff;
+    border-color: #20bf6b;
+    box-shadow: 0 4px 10px rgba(32, 191, 107, 0.2);
+}
+
+/* turn off the border of the search box */
+.search-box input {
+    border: none;
+    outline: none;
+    width: 100%;
+    background: transparent;
+    font-size: 14px;
+    color: #2d3436;
+    height: 100%;
+}
+
+.search-box input:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+.search-box button {
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #777;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    height: 100%;
+    transition: color 0.3s ease;
+}
+
+.search-box button:hover {
+    color: #20bf6b;
+}
+
+/* User Actions */
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.user-actions .icon-btn {
+    font-size: 22px;
+    color: #2d3436;
+    text-decoration: none;
+    transition: 0.3s;
+    position: relative;
+}
+
+/* Login button */
+.login-btn {
+    background-color: #ffffff;
+    color: #20bf6b;
+    padding: 9px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+/* Hiệu ứng khi di chuột vào nút Login */
+.login-btn:hover {
+    background-color: #f1f2f6;
+    color: #1a9c56;
+    transform: translateY(-2px);
+    /* Bay lên nhẹ */
+    box-shadow: 0 6px 15px rgba(32, 191, 107, 0.4);
+}
+
+
+
+/* ===== HEADER-BOTTOM ===== */
+.header-bottom {
+    position: relative;
+    background-color: #ffffff;
+    padding: 0px;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin-top: 5px;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: #2d3436;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 16px;
+    padding: 15px 0;
+    display: block;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s;
+}
+
+.main-nav ul li a:hover {
+    color: #20bf6b;
+    border-bottom: 2px solid #20bf6b;
+}
+
+/* header fixing */
+.header-top .container,
+.header-bottom .container {
+    display: flex;
+    align-items: center;
+}
+
+/* === BODY SECTION === */
+/* global helper */
+.section-padding {
+    padding: 60px 15px;
+    display: block;
+
+}
+
+.section-title {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 40px;
+    font-size: 32px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #2d3436;
+}
+
+/* Hero banner/slider */
+/* ===== HERO SLIDER ===== */
+.hero-slider {
+    position: relative;
+    width: 100%;
+    height: 600px;
+}
+
+/* Make Swiper take full height */
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Backgrounds are handled inline in HTML for gradients */
+}
+
+/* Slide Content Layout */
+.slide-content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding: 0 50px;
+}
+
+/* --- Content Styling --- */
+.slide-text {
+    max-width: 50%;
+    color: white;
+}
+
+.slide-badge {
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.slide-text h1 {
+    font-size: 56px;
+    line-height: 1.1;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.slide-text p {
+    font-size: 20px;
+    margin-bottom: 35px;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* Button: White with Mint Text */
+.hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #ffffff;
+    color: #20bf6b;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 16px;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hero-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    color: #1a9c56;
+}
+
+/* Image Styling */
+.slide-image {
+    max-width: 45%;
+    display: flex;
+    justify-content: center;
+}
+
+.slide-image img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* --- Customize Swiper Navigation Buttons --- */
+.swiper-button-next,
+.swiper-button-prev {
+    color: white !important;
+    /* Force arrows white */
+    width: 50px !important;
+    height: 50px !important;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    backdrop-filter: blur(4px);
+    transition: 0.3s;
+}
+
+/* Make arrow icons smaller */
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 20px !important;
+    font-weight: bold;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background: white;
+    color: #20bf6b !important;
+    /* Mint arrow on hover */
+}
+
+/* --- Customize Pagination Dots --- */
+.swiper-pagination-bullet {
+    background: white !important;
+    opacity: 0.5;
+    width: 10px;
+    height: 10px;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: white !important;
+    transform: scale(1.2);
+}
+
+
+/* --- Navigation Buttons --- */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-btn:hover {
+    background: white;
+    color: #333;
+    border-color: white;
+}
+
+.slider-btn.prev {
+    left: 30px;
+}
+
+.slider-btn.next {
+    right: 30px;
+}
+
+/* --- Pagination Dots --- */
+.slider-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dot.active {
+    background: white;
+    transform: scale(1.2);
+}
+
+/* categories section */
+.category-grid {
+    display: grid;
+    /* Force 4 columns exactly */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 0;
+}
+
+.category-card {
+    background-color: #f8f9fa;
+    /* Light grey background like reference */
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 300px;
+    /* Fixed height for uniformity */
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    background-color: white;
+}
+
+.category-card h3 {
+    font-size: 18px;
+    color: #20bf6b;
+    /* Mint color for title */
+    margin-bottom: 15px;
+}
+
+.category-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    mix-blend-mode: multiply;
+    /* Helps blend image if it has white bg */
+}
+
+.shop-btn {
+    background-color: #20bf6b;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.shop-btn:hover {
+    background-color: #1a9c56;
+}
+
+/* Product */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #20bf6b;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-info h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.product-info p {
+    font-size: 13px;
+    color: #636e72;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: 800;
+    color: #20bf6b;
+    margin-bottom: 15px;
+}
+
+.product-btns {
+    display: flex;
+    gap: 10px;
+}
+
+.add-cart {
+    flex: 1;
+    background: #2d3436;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.view-details {
+    background: #f1f2f6;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* ===== PROMO BANNER ===== */
+.promo-banner {
+    background: linear-gradient(135deg, #20bf6b 0%, #1a9c56 100%);
+    border-radius: 20px;
+    padding: 60px;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.promo-banner p {
+    margin-bottom: 25px;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.claim-btn {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #20bf6b;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.claim-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background-color: #f1f2f6;
+}
+
+/* ===== FOOTER ===== */
+.main-footer {
+    background-color: #0a0e17;
+    color: #ffffff;
+    margin-top: 55px;
+    padding: 60px 0 20px;
+    font-size: 14px;
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #1f2633;
+    /* Subtle separator line */
+}
+
+/* Headings in Footer */
+.footer-col h4 {
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Links List */
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    color: #b2bec3;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: #1a9c56;
+    /* Bright Blue on Hover */
+}
+
+/* --- Subscribe Column --- */
+.subscribe-col h4 {
+    margin-bottom: 15px;
+}
+
+.subscribe-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.subscribe-form input {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    flex: 1;
+}
+
+.subscribe-form button {
+    background-color: #1a9c56;
+    /* Bright Blue Button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.subscribe-form button:hover {
+    background-color: #20bf6b;
+}
+
+/* --- Social Icons --- */
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #1a9c56;
+}
+
+/* --- Contact Column --- */
+.contact-info p {
+    color: #b2bec3;
+    margin-bottom: 8px;
+}
+
+.phone-number {
+    font-size: 16px;
+    color: #fff !important;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* --- Footer Bottom --- */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.copyright {
+    color: #636e72;
+    font-size: 12px;
+}
+
+.payment-icons {
+    display: flex;
+    gap: 10px;
+    font-size: 24px;
+    color: #fff;
+}

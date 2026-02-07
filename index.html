@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- swiperjs cdn for hero banner -->
+    <title>DV-Store</title>
+    <link rel="stylesheet" href="assets/CSS/style.css">
+</head>
+
+<body>
+
+    <!-- === HEADER === -->
+    <header class="main-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="logo">
+                    <h2>DV STORE</h2>
+                </div>
+
+                <div class="search-box">
+                    <input type="text" placeholder="search..">
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+
+                <div class="user-action">
+                    <a href="#" class="icon-btn"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <a href="#" class="icon-btn"><i class="fa-solid fa-bell"></i></a>
+
+                    <a href="pages/login.html" class="login-btn">Login</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-bottom">
+            <div class="container">
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+
+                        <li class="has-dropdown">
+                            <a href="#">Products <i class="fa-solid fa-chevron-down"></i></a>
+
+                            <div class="mega-menu">
+                                <div class="container">
+                                    <div class="mega-content">
+                                        <div class="mega-sidebar">
+                                            <a href="#" class="menu-trigger active" data-target="grid-2x2">2x2 Speed
+                                                Cubes <i class="fa-solid fa-chevron-right"></i></a>
+                                            <a href="#" class="menu-trigger" data-target="grid-3x3">3x3 Speed Cubes <i
+                                                    class="fa-solid fa-chevron-right"></i></a>
+                                            <a href="#" class="menu-trigger" data-target="grid-4x4">4x4 & 5x5 <i
+                                                    class="fa-solid fa-chevron-right"></i></a>
+                                            <a href="#" class="menu-trigger" data-target="grid-smart">Smart Cubes <i
+                                                    class="fa-solid fa-chevron-right"></i></a>
+                                        </div>
+
+                                        <div class="mega-grid-container">
+
+                                            <div class="mega-grid active" id="grid-2x2">
+                                                <div class="mega-item">
+                                                    <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?auto=format&fit=crop&w=200&q=80"
+                                                        alt="2x2">
+                                                    <h4>GAN 251 M Pro</h4>
+                                                </div>
+                                                <div class="mega-item">
+                                                    <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?auto=format&fit=crop&w=200&q=80"
+                                                        alt="2x2">
+                                                    <h4>GAN 251 M Air</h4>
+                                                </div>
+                                                <div class="mega-item">
+                                                    <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?auto=format&fit=crop&w=200&q=80"
+                                                        alt="2x2">
+                                                    <h4>GAN 251 M Leap</h4>
+                                                </div>
+                                                <div class="mega-item">
+                                                    <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?auto=format&fit=crop&w=200&q=80"
+                                                        alt="2x2">
+                                                    <h4>GAN 249 V2</h4>
+                                                </div>
+                                            </div>
+
+                                            <div class="mega-grid" id="grid-3x3">
+                                                <div class="mega-item">
+                                                    <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?auto=format&fit=crop&w=200&q=80"
+                                                        alt="3x3">
+                                                    <h4>GAN 14 Maglev</h4>
+                                                </div>
+                                                <div class="mega-item">
+                                                    <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?auto=format&fit=crop&w=200&q=80"
+                                                        alt="3x3">
+                                                    <h4>GAN 13 Maglev</h4>
+                                                </div>
+                                                <div class="mega-item">
+                                                    <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?auto=format&fit=crop&w=200&q=80"
+                                                        alt="3x3">
+                                                    <h4>GAN 12 Maglev</h4>
+                                                </div>
+                                                <div class="mega-item">
+                                                    <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?auto=format&fit=crop&w=200&q=80"
+                                                        alt="3x3">
+                                                    <h4>GAN 11 M Pro</h4>
+                                                </div>
+                                                <div class="mega-item">
+                                                    <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?auto=format&fit=crop&w=200&q=80"
+                                                        alt="3x3">
+                                                    <h4>GAN 356 M</h4>
+                                                </div>
+                                            </div>
+
+                                            <div class="mega-grid" id="grid-4x4">
+                                                <div class="mega-item">
+                                                    <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?auto=format&fit=crop&w=200&q=80"
+                                                        alt="4x4">
+                                                    <h4>GAN 460 M</h4>
+                                                </div>
+                                            </div>
+
+                                            <div class="mega-grid" id="grid-smart">
+                                                <div class="mega-item">
+                                                    <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?auto=format&fit=crop&w=200&q=80"
+                                                        alt="Smart">
+                                                    <h4>GAN 12 UI</h4>
+                                                </div>
+                                                <div class="mega-item">
+                                                    <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?auto=format&fit=crop&w=200&q=80"
+                                                        alt="Smart">
+                                                    <h4>GAN i3</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="has-dropdown">
+                            <a href="#">Brands <i class="fa-solid fa-chevron-down"></i></a>
+
+                            <div class="mega-menu">
+                                <div class="container">
+                                    <div class="mega-content">
+                                        <div class="mega-sidebar">
+                                            <a href="#" class="menu-trigger active" data-target="brand-qiyi">Qiyi <i
+                                                    class="fa-solid fa-chevron-right"></i></a>
+                                            <a href="#" class="menu-trigger" data-target="brand-moyu">Moyu <i
+                                                    class="fa-solid fa-chevron-right"></i></a>
+                                            <a href="#" class="menu-trigger" data-target="brand-gan">GAN <i
+                                                    class="fa-solid fa-chevron-right"></i></a>
+                                            <a href="#" class="menu-trigger" data-target="brand-yuxin">Yuxin <i
+                                                    class="fa-solid fa-chevron-right"></i></a>
+                                        </div>
+
+                                        <div class="mega-grid-container">
+
+                                            <div class="mega-grid active" id="brand-qiyi">
+                                                <div class="mega-item">
+                                                    <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?auto=format&fit=crop&w=200&q=80"
+                                                        alt="Qiyi">
+                                                    <h4>Qiyi Warrior W</h4>
+                                                </div>
+                                                <div class="mega-item">
+                                                    <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?auto=format&fit=crop&w=200&q=80"
+                                                        alt="Qiyi">
+                                                    <h4>Qiyi MS Magnetic</h4>
+                                                </div>
+                                                <div class="mega-item">
+                                                    <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?auto=format&fit=crop&w=200&q=80"
+                                                        alt="Qiyi">
+                                                    <h4>Valk 3 Elite</h4>
+                                                </div>
+                                            </div>
+
+                                            <div class="mega-grid" id="brand-moyu">
+                                                <div class="mega-item">
+                                                    <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?auto=format&fit=crop&w=200&q=80"
+                                                        alt="Moyu">
+                                                    <h4>RS3M V5</h4>
+                                                </div>
+                                                <div class="mega-item">
+                                                    <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?auto=format&fit=crop&w=200&q=80"
+                                                        alt="Moyu">
+                                                    <h4>WRM V9</h4>
+                                                </div>
+                                            </div>
+
+                                            <div class="mega-grid" id="brand-gan">
+                                                <div class="mega-item">
+                                                    <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?auto=format&fit=crop&w=200&q=80"
+                                                        alt="GAN">
+                                                    <h4>GAN 14 Maglev</h4>
+                                                </div>
+                                                <div class="mega-item">
+                                                    <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?auto=format&fit=crop&w=200&q=80"
+                                                        alt="GAN">
+                                                    <h4>GAN 356 XS</h4>
+                                                </div>
+                                            </div>
+
+                                            <div class="mega-grid" id="brand-yuxin">
+                                                <div class="mega-item">
+                                                    <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?auto=format&fit=crop&w=200&q=80"
+                                                        alt="Yuxin">
+                                                    <h4>Little Magic 3x3</h4>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li><a href="#">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- === BODY === -->
+    <!-- hero slider -->
+
+    <section class="hero-slider">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide" style="background: linear-gradient(135deg, #20bf6b 0%, #0fb9b1 100%);">
+                    <div class="container slide-content-wrapper">
+                        <div class="slide-text">
+                            <span class="slide-badge">2026 Year Of The Horse Edition</span>
+                            <h1>GAN V100 Leap <br> GAN356 i Carry 4</h1>
+                            <p>Horsie in your hand. Wind in your sails.</p>
+                            <a href="#" class="hero-cta">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                        <div class="slide-image">
+                            <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?auto=format&fit=crop&w=600&q=80"
+                                alt="New Cube">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                    <div class="container slide-content-wrapper">
+                        <div class="slide-text">
+                            <span class="slide-badge">New Arrival</span>
+                            <h1>Monster Go <br> AI Smart Cube</h1>
+                            <p>Learn to solve in the smartest way possible.</p>
+                            <a href="#" class="hero-cta">Discover More <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                        <div class="slide-image">
+                            <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?auto=format&fit=crop&w=600&q=80"
+                                alt="Smart Cube">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- Shop by categories -->
+    <section class="container section-padding">
+        <h2 class="section-title">Cube Categories</h2>
+        <div class="category-grid">
+            <div class="category-card">
+                <h3>Flagship Series</h3>
+                <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?auto=format&fit=crop&w=300&q=80"
+                    alt="Flagship">
+                <a href="#" class="shop-btn">Shop Now ></a>
+            </div>
+            <div class="category-card">
+                <h3>Smart Cubes</h3>
+                <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?auto=format&fit=crop&w=300&q=80"
+                    alt="Smart">
+                <a href="#" class="shop-btn">Shop Now ></a>
+            </div>
+            <div class="category-card">
+                <h3>Budget Speed</h3>
+                <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?auto=format&fit=crop&w=300&q=80"
+                    alt="Budget">
+                <a href="#" class="shop-btn">Shop Now ></a>
+            </div>
+            <div class="category-card">
+                <h3>Lubricants</h3>
+                <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?auto=format&fit=crop&w=300&q=80"
+                    alt="Lube">
+                <a href="#" class="shop-btn">Shop Now ></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product show -->
+    <section class="container section-padding">
+        <h2 class="section-title">Featured Products</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-badge">New</div>
+                <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?auto=format&fit=crop&w=300&q=80"
+                    alt="Cube">
+                <div class="product-info">
+                    <h3>GAN 14 MagLev</h3>
+                    <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i></div>
+                    <div class="price">$59.99</div>
+                    <button class="add-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?auto=format&fit=crop&w=300&q=80"
+                    alt="Cube">
+                <div class="product-info">
+                    <h3>MoYu RS3M V5</h3>
+                    <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-regular fa-star"></i></div>
+                    <div class="price">$9.99</div>
+                    <button class="add-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?auto=format&fit=crop&w=300&q=80"
+                    alt="Cube">
+                <div class="product-info">
+                    <h3>Tornado V3</h3>
+                    <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i></div>
+                    <div class="price">$32.00</div>
+                    <button class="add-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-badge">-10%</div>
+                <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?auto=format&fit=crop&w=300&q=80"
+                    alt="Cube">
+                <div class="product-info">
+                    <h3>GAN i3 Smart</h3>
+                    <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star-half-stroke"></i></div>
+                    <div class="price">$45.00</div>
+                    <button class="add-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promotion Section -->
+    <section class="container section-padding">
+        <div class="promo-banner">
+            <div class="promo-content">
+                <span>Limited Time Offer</span>
+                <h2>Bundle Deal: Pro Lube + GAN Cube</h2>
+                <p>Save 20% when you buy any flagship cube with a maintenance kit.</p>
+                <a href="#" class="claim-btn">Claim Offer</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- === FOOTER === -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col subscribe-col">
+                    <h4>Subscribe and unlock special discount!</h4>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="button">Subscribe</button>
+                    </form>
+
+                    <div class="social-section">
+                        <h4>Follow Us</h4>
+                        <div class="social-icons">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>DV Program</h4>
+                    <ul>
+                        <li><a href="#">Student Discount</a></li>
+                        <li><a href="#">Membership Program</a></li>
+                        <li><a href="#">Wholesale Program</a></li>
+                        <li><a href="#">Sponsorship Program</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="#">Brand Story</a></li>
+                        <li><a href="#">Cube Community</a></li>
+                        <li><a href="#">DV Team</a></li>
+                        <li><a href="#">Classroom</a></li>
+                        <li><a href="#">Blogs</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Track Your Order</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col contact-col">
+                    <div class="currency-selector">
+                        <h4>Currency chosen</h4>
+                        <p><span style="color: red;">★</span> VND ₫ <i class="fa-solid fa-chevron-down"></i></p>
+                    </div>
+
+                    <div class="contact-info">
+                        <h4>Contact Us</h4>
+                        <p class="phone-number">090-123-4567</p>
+                        <p>service@dvstore.com</p>
+                        <p>CST. 9:00 - 18:00</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">Copyright ©2026. DV-STORE All Rights Reserved.</p>
+                <div class="payment-icons">
+                    <i class="fa-brands fa-cc-visa"></i>
+                    <i class="fa-brands fa-cc-mastercard"></i>
+                    <i class="fa-brands fa-cc-amex"></i>
+                    <i class="fa-brands fa-cc-paypal"></i>
+                    <i class="fa-brands fa-cc-apple-pay"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
