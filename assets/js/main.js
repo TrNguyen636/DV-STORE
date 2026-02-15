@@ -18,16 +18,24 @@ var swiper = new Swiper(".mySwiper", {
 });
 
 /* --- Mega navbar animation --- */
+/* assets/js/main.js */
 const triggers = document.querySelectorAll('.menu-trigger');
-const grids = document.querySelectorAll('.mega-grid');
 
 if (triggers.length > 0) {
     triggers.forEach(trigger => {
         trigger.addEventListener('mouseenter', () => {
-            triggers.forEach(t => t.classList.remove('active'));
-            grids.forEach(g => g.classList.remove('active'));
+            // 1. Find which specific menu we are inside (Products OR Brands)
+            const parentMenu = trigger.closest('.mega-content');
 
+            // 2. Only remove 'active' from items INSIDE this specific menu
+            // This prevents "Brands" from breaking "Products"
+            parentMenu.querySelectorAll('.menu-trigger').forEach(t => t.classList.remove('active'));
+            parentMenu.querySelectorAll('.mega-grid').forEach(g => g.classList.remove('active'));
+
+            // 3. Make THIS trigger active
             trigger.classList.add('active');
+
+            // 4. Show the matching grid
             const targetId = trigger.getAttribute('data-target');
             const targetGrid = document.getElementById(targetId);
 
